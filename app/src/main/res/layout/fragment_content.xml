@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nan.zhbj.view.NoScrollViewPager
+        android:id="@+id/cvp_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></com.nan.zhbj.view.NoScrollViewPager>
+
+    <RadioGroup
+        android:id="@+id/rg_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bottom_tab_bg"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <!--Radiobutton必须要设置id，否则起不到单选的作用-->
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/ContentTabButton"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_button_home_selector"
+            android:text="主页" />
+
+        <RadioButton
+            android:id="@+id/rb_news"
+            style="@style/ContentTabButton"
+            android:drawableTop="@drawable/tab_button_news_selector"
+            android:text="新闻中心" />
+
+        <RadioButton
+            android:id="@+id/rb_smart"
+            style="@style/ContentTabButton"
+            android:drawableTop="@drawable/tab_button_smart_selector"
+            android:text="智慧服务" />
+
+        <RadioButton
+            android:id="@+id/rb_affairs"
+            style="@style/ContentTabButton"
+            android:drawableTop="@drawable/tab_button_affairs_selector"
+            android:text="政务" />
+
+        <RadioButton
+            android:id="@+id/rb_settings"
+            style="@style/ContentTabButton"
+            android:drawableTop="@drawable/tab_button_settings_selector"
+            android:text="设置" />
+    </RadioGroup>
+</LinearLayout>

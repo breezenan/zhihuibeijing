@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!--thickness 圆环环的宽度--><!--userlevel false才可以显示出圆环-->
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:toDegrees="360">
+    <shape
+        android:innerRadius="18dp"
+        android:shape="ring"
+        android:thickness="5dp"
+        android:useLevel="false">
+
+        <gradient
+            android:centerColor="#88ff0000"
+            android:endColor="#ff0000"
+            android:startColor="#ffffff"
+            android:type="sweep"></gradient>
+    </shape>
+</rotate>
