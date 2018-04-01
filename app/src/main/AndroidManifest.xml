@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--jpush begin-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.nan.zhbj">
+    <!--jpush end-->
 
     <!-- share sdk begin-->
     <uses-permission android:name="android.permission.GET_TASKS" />
@@ -83,6 +86,29 @@
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!--sharesdk end-->
+        <!--jpush receiver begin-->
+        <receiver
+            android:name=".receiver.PushReceiver"
+            android:enabled="true"
+            tools:node="replace">
+            <intent-filter>
+                <!--Required 用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!--Required 用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!--Required 用户接收SDK通知栏信息的intent-->
+
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!--Required 用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
+
+                <category android:name="com.nan.zhbj" />
+            </intent-filter>
+        </receiver>
+        <!--jpush receiver end-->
     </application>
 
 </manifest>

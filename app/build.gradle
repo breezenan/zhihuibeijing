@@ -10,6 +10,18 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //add jpush begin
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.nan.zhbj",
+                JPUSH_APPKEY : "174a04ad232bb311aab3b726", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+        //add jpush end
     }
     buildTypes {
         release {
@@ -31,4 +43,8 @@ dependencies {
     implementation files('libs/gson-2.8.2.jar')
     implementation project(':ViewPagerIndicator')
     implementation files('libs/MobCommons-2018.0308.1404.jar')
+    //add jpush begin
+    implementation 'cn.jiguang.sdk:jpush:3.1.1'  // 此处以JPush 3.1.1 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:1.1.9'  // 此处以JCore 1.1.9 版本为例。
+    //add jpush end
 }
